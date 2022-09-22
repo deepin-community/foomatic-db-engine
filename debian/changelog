@@ -1,0 +1,1324 @@
+foomatic-db-engine (4.0.13-6) unstable; urgency=medium
+
+  * Run wrap-and-sort -baskt
+  * Cleanup dependencies thanks to cme fix dpkg-control
+  * Remove myself from Uploaders
+  * Update watch file format version to 4
+  * Update renamed lintian tag names in lintian overrides
+  * Set upstream metadata fields
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 02 Sep 2021 15:20:27 +0200
+
+foomatic-db-engine (4.0.13-5) unstable; urgency=medium
+
+  * Cherry-pick upstream-merged patch to recognize fractional numbers in
+    PageSize from RedHat's Andreas Gruenbacher
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 27 May 2020 18:30:33 +0200
+
+foomatic-db-engine (4.0.13-4) unstable; urgency=medium
+
+  * Packaging cleanup:
+    - Convert to git-debrebase
+    - Trim trailing whitespace
+    - Use secure URI in Homepage field
+    - Set debhelper-compat version in Build-Depends
+    - Fix day-of-week for 4 changelog entries
+    - Bump debhelper version to 12
+    - Bump Standards-Version to 4.4.1
+  * Patch upstream to use pkg-config instead of xml2-config (Closes: #949145)
+  * Add pkg-config as B-D
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 17 Jan 2020 16:22:58 +0100
+
+foomatic-db-engine (4.0.13-3) unstable; urgency=medium
+
+  * merged-/usr support:
+    - Add patch to fix CURL and WGET detection
+    - Enforce fixed paths for more binaries (Closes: #915348)
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 05 Dec 2018 23:31:56 +0100
+
+foomatic-db-engine (4.0.13-2) unstable; urgency=medium
+
+  * Packaging cleanup:
+   - Bump debhelper compat to 11
+   - Bump S-V to 4.2.1
+   - Cleanup d/control with `cme fix dpkg-control`
+   - Enable hardening
+   - Enforce fixed paths for grep, cat, bash and /usr/lib/cups to ensure
+     reproducibility accross {non-,}merged-/usr rootfs'es
+   - Fix ou{,t}put and program{,m}atic typos in manpages and scripts
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 01 Dec 2018 20:10:24 +0100
+
+foomatic-db-engine (4.0.13-1) unstable; urgency=medium
+
+  * New upstream version 4.0.13
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 03 Mar 2018 16:26:10 +0100
+
+foomatic-db-engine (4.0.12-3) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.1.3 without changes needed
+  * Update Vcs-* fields for the move to salsa.d.o
+  * Instantiate gbp and git-dpm
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 10 Feb 2018 14:48:13 +0100
+
+foomatic-db-engine (4.0.12-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * Wrap-and-sort debian/control
+  * Bump debhelper B-D to 9
+  * Bump Standards-Version to 3.9.6 without changes needed
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 18 Jun 2015 11:05:20 +0200
+
+foomatic-db-engine (4.0.12-1) experimental; urgency=low
+
+  * New upstream release
+     - foomatic-ppdfile: Foomatic doesn't provide some offered PPD
+       files. Thanks to Marek Kasik for the patch (Upstream bug #1238).
+     - foomatic-ppd-to-xml.in: Let missing XML files be added when to a
+       PPD with already existing XML files new "*Product:" lines get
+       added.
+
+ -- Didier Raboud <odyx@debian.org>  Sun, 12 Apr 2015 10:35:27 +0200
+
+foomatic-db-engine (4.0.11-1) unstable; urgency=medium
+
+  [ Till Kamppeter ]
+  * New upstream release
+     - Do not interpret option default values set to "0" in PPD files as no
+       default setting defined.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 24 Mar 2014 10:45:14 +0100
+
+foomatic-db-engine (4.0.10-1) unstable; urgency=medium
+
+  * New upstream release
+     - Make foomatic-addpjloptions work with the system's Foomatic database,
+       too.
+
+  [ Till Kamppeter ]
+  * Fixed debian/watch to allow version number components with more than one
+    figure.
+
+  [ Didier Raboud ]
+  * Move the repository from collab-maint to printing; update the VCS-* fields
+    accordingly
+  * Append CPPFLAGS and LDFLAGS to CFLAGS, to enable full hardening
+  * Add patch to fix manpage warnings
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 06 Mar 2014 14:16:02 +0100
+
+foomatic-db-engine (4.0.9-3) unstable; urgency=low
+
+  * Add cups-filters >= 1.0.42 as first alternative dependency to
+    foomatic-filters
+  * Bump Standards-Version to 3.9.5 without changes needed
+  * Bump debhelper compat to 9 to get auto buildflags
+
+ -- Didier Raboud <odyx@debian.org>  Sat, 07 Dec 2013 00:38:34 +0100
+
+foomatic-db-engine (4.0.9-2) unstable; urgency=low
+
+  * Upload to unstable
+  * Bump Standards-Version to 3.9.4 without changes needed
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 17 May 2013 15:41:09 +0200
+
+foomatic-db-engine (4.0.9-1) experimental; urgency=low
+
+  [ Till Kamppeter ]
+  * New upstream release
+     - Error our with a decent message when no Foomatic database is present
+       (Closes: #627770).
+  * Demoted netcat from Recommends: to Suggests: (In Ubuntu it is only in
+    Universe).
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 11 Mar 2013 23:42:15 +0100
+
+foomatic-db-engine (4.0.8-3) unstable; urgency=low
+
+  * Add patch to fix the path to netcat. (Closes: #676378)
+  * Bump Standards-Version to 3.9.3 without changes needed.
+
+ -- Didier Raboud <odyx@debian.org>  Mon, 11 Jun 2012 10:40:43 +0200
+
+foomatic-db-engine (4.0.8-2ubuntu1) oneiric; urgency=low
+
+  * debian/rules: Install the PPD updater without executable bits (644), it
+    is not run by itself, but sourced into another script.
+  * debian/foomatic-db-engine.ppd-updater: Removed unneeded lines. The PPD
+    updaters are only include files for shellscripts, not scripts by themselves.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 18 Aug 2011 11:38:40 +0200
+
+foomatic-db-engine (4.0.8-2) unstable; urgency=low
+
+  * Replace the PPD-updater postinst code by CUPS' trigger.
+    - Breaks against too old cups versions.
+    - Add a ppd-updater file, to trigger with parameters.
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 18 Aug 2011 14:18:22 +0200
+
+foomatic-db-engine (4.0.8-1) unstable; urgency=low
+
+  * Upload 4.0.8 to unstable.
+
+  * Uploaders update:
+    - Drop Chris Lawrence, with his consent and great thanks for the 7 years
+      of work on foomatic-db-engine.
+    + Add Till Kamppeter.
+  * Drop the reference to foomatic-gui.
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 03 Aug 2011 17:52:13 +0200
+
+foomatic-db-engine (4.0.8-0ubuntu1) oneiric; urgency=low
+
+  * New upstream release
+     - Improved printer entry search algorithm letting the value of matching
+       only manufacturer and model in the device ID bein higher than matching
+       the make and model fields of the Foomatic entry but lower than a full
+       device ID match and also scoring a printer with actual Foomatic entry
+       higher than a printer only known by a driver entry.
+     - Handle non-UTF-8 encodings in imported PPD files.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Sun, 25 Jul 2010 12:45:40 +0200
+
+foomatic-db-engine (4.0.7-2) unstable; urgency=low
+
+  * Drop the dummy foomatic-filters-ppds package, which was only useful
+    for Lenny-Squeeze upgrades.
+  * debian/foomatic-db-engine.install: Remove as there is only one
+    binary package remaining.
+  * Promote foomatic-db back to Recommends from Suggests, make the
+    recommendation favour -compressed-ppds. This ensures that upgrades
+    from Squeeze keep one foomatic-db flavour installed.
+  * Bump Standards-Version to 3.9.2.0 without changes needed.
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 20 May 2011 11:06:40 +0200
+
+foomatic-db-engine (4.0.7-1) unstable; urgency=low
+
+  * New 4.0.7 upstream release.
+
+ -- Didier Raboud <odyx@debian.org>  Fri, 18 Feb 2011 17:27:13 +0100
+
+foomatic-db-engine (4.0.7-0ubuntu1) natty; urgency=low
+
+  * New upstream release
+     - lib/Foomatic/DB.pm: Avoid Perl crashing if a directory of the
+       Foomatic database does not contain XML files (Upstream bug #613).
+     - Fixed wrong quotes in error message which prevented a variable
+       from being substituted by its value (Upstream bug #612).
+     - Fixed typos in README (Upstream bug #608).
+     - Several fixes and improvements in the build system (Upstream bugs
+       #605, #609, and #610).
+     - Silenced compiler warnibgs by consistent use of "const" (Upstream
+       bug #604).
+     - C code improvements (Upstream bugs #599, #600, #601).
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 18 Feb 2010 16:54:40 +0100
+
+foomatic-db-engine (4.0.6-1) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Didier Raboud <odyx@debian.org>  Wed, 09 Feb 2011 16:42:28 +0100
+
+foomatic-db-engine (4.0.6-1~exp1) experimental; urgency=low
+
+  * New 4.0.6 upstream release; merge from Ubuntu Natty.
+    - Drop all patches; incorporated upstream.
+    - Demote foomatic-db from Depends to Recommends.
+
+  * Use my @.d.o address.
+
+ -- Didier Raboud <odyx@debian.org>  Thu, 27 Jan 2011 16:56:49 +0100
+
+foomatic-db-engine (4.0.6-0ubuntu1) natty; urgency=low
+
+  * New upstream release
+     - Rearranged gcc command line so that linking works with gcc 4.5.x
+       (LP: #687973).
+     - Allow generating a printer XML files also from more than one PPD file
+       for the same printer with only one call of the foomatic-ppd-to-xml
+       script.
+     - When generating XML files, use exactly the same style as the
+       OpenPrinting web server uses on daily synchronization. This avoids
+       automatic BZR commits without real changes.
+     - Personal comments and optional suppression of automatic driver
+       assignments when generating printer XML files from PPDs with
+       foomatic-ppd-to-xml.
+     - Let the functions of the DB.pm Perl module not abort the whole program
+       when a C helper program fails.
+     - When generating PPDs with foomatic-ppdfile (also
+       /usr/lib/cups/driver/foomatic) handle driver names with a dash (like
+       "hpijs-pcl3") correctly.
+     - Documented special entities for inserting job parameters into
+       renderer command line code snippets, like "&job;", "&user;", "&host;",
+       "&title;", "&options;", ...
+  * debian/patches/db-pm-do-not-die-on-c-helper-failure.patch,
+    debian/patches/fix-ppd-generation-for-driver-name-with-dash.patch: Removed
+    patches with upstream fixes.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Wed, 15 Dec 2010 21:57:40 +0100
+
+foomatic-db-engine (4.0.5-0ubuntu6) maverick; urgency=low
+
+  * debian/control: Do not recommend foomatic-db at all, as foomatic-db-engine
+    makes sense without foomatic-db to build packages, especially foomatic-db.
+    The system-installed foomatic-db-engine can also be used for inplace builds
+    of PPDs from Foomatic data, pointing to the Foomatic data with the
+    FOOMATICDB environment variable. This way we can install foomatic-db-engine
+    easily with apt-get also on desktop installations where foomatic-db cannot
+    be installed as it conflicts with foomatic-db-compressed-ppds. We put
+    foomatic-db into Suggests: now.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Mon,  6 Sep 2010 22:45:40 +0200
+
+foomatic-db-engine (4.0.5-0ubuntu5) maverick; urgency=low
+
+  [ Till Kamppeter ]
+  * debian/control: Demoted foomatic-db from Depends: to Recommends:. We now
+    also use foomatic-db-engine to pre-build the PPDs when building
+    foomatic-db.
+  * debian/patches/db-pm-do-not-die-on-c-helper-failure.patch: Upstream fix
+    to let the functions/methods of the DB.pm library not abort the program
+    if one of the C helper programs foomatic-combo-xml or foomatic-perl-data
+    fails.
+  * debian/patches/fix-ppd-generation-for-driver-name-with-dash.patch:
+    Upstream fix to assure that printer and driver IDs in PPD URIs are
+    separated correctly if the driver name contains a dash. Before,
+    foomatic:Apollo-P-2100-hpijs-pcl3.ppd got interpreted as printer
+    Apollo-P-2100-hpijs and driver pcl3.
+
+  [ Didier Raboud ]
+  * Let dh_link manage the links.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Mon, 30 Aug 2010 23:41:40 +0200
+
+foomatic-db-engine (4.0.5-0ubuntu4) maverick; urgency=low
+
+  [ Didier Raboud ]
+  * debian/control: Bumped Standards to 3.9.1.0 without changes needed.
+  * debian/control, README.Debian: Text corrections.
+  * debian/foomatic-db-engine.lintian-overrides: Removed dummy lintian
+    override.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Tue, 10 Aug 2010 15:54:40 +0200
+
+foomatic-db-engine (4.0.5-0ubuntu3) maverick; urgency=low
+
+  * debian/rules, debian/foomatic-db-engine.install: Corrected manual
+    installation of the CUPS PPD generator link.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Mon,  9 Aug 2010 23:04:40 +0200
+
+foomatic-db-engine (4.0.5-0ubuntu2) maverick; urgency=low
+
+  * debian/rules: Manually install the CUPS PPD generator link as the
+    "make install" process does not install it when running on the
+    build servers.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Mon,  9 Aug 2010 22:09:40 +0200
+
+foomatic-db-engine (4.0.5-0ubuntu1) maverick; urgency=low
+
+  [ Till Kamppeter ]
+  * New upstream release
+    - foomatic-printermap-to-gutenprint-xml: Use same XML indentation scheme
+      as the MySQL data export on the OpenPrinting web site
+    - When creating XML files from PPDs, do not add "lj5mono" to the driver
+      list any more as this driver entry got removed.
+    - Build system fixes.
+    - Fixed some hyphen-used-as-minus lintian warnings caused by the man pages.
+    - Support for new "fingerprint" parameter for the "<package>" tag.
+  * debian/patches/fixPerlModulesInstall.patch,
+    debian/patches/manpagesFixes.patch: Removed patches for backported
+    upstream fixes.
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 10 Aug 2010 14:04:41 +0200
+
+foomatic-db-engine (4.0.4-3) unstable; urgency=low
+
+  * Add an epoch to foomatic-filters-ppds binary package to allow Lenny-
+    Squeeze upgrades (Closes: #595523)
+
+ -- Didier Raboud <didier@raboud.com>  Thu, 16 Sep 2010 11:06:09 +0200
+
+foomatic-db-engine (4.0.4-2) unstable; urgency=low
+
+  * Re-introduce foomatic-filters-ppds as dummy package to ease migration away
+    from it (Closes: #588093)
+  * Putting under Debian Printing Group umbrella.
+  * Update README.Debian.
+  * Bump Standards to 3.9.1.0 without changes needed.
+
+  [ Till Kamppeter ]
+  * debian/foomatic-db-engine.install: With the transitional package
+    foomatic-filters-ppds re-introduced we need a .install file to tell the
+    package build process which files should go into the foomatic-db-engine
+    binary package.
+
+ -- Didier Raboud <didier@raboud.com>  Tue, 10 Aug 2010 14:04:41 +0200
+
+foomatic-db-engine (4.0.4-1) unstable; urgency=low
+
+  * New upstream release (Closes: #532982)
+
+  * Remove foomatic-filters-ppds package: upstream has deprecated it.
+    (Closes: #584355)
+
+  * Merge from Ubuntu:
+    - postinst: PPD auto updaters:
+      "If the package is updated, it is checked whether existing
+       queues use PPDs of this package and if yes, the PPDs get
+       updated." (Till)
+    - Don't install the bug presubj for them.
+    - Install the apport hook on Ubuntu
+    - Merge the changelog entries.
+    - Merge most package relationships.
+    - Get rid of foomatic-db-hpijs references (deprecated upstream).
+    - Cleanup descriptions
+
+  * Add myself to Uploaders as I'll help Chris in maintaining
+    foomatic-db-engine.
+  * Convert to dh7 tiny style, cleanup packaging files.
+    - Add fixPerlModulesInstall.patch to get them right.
+  * Fix some hyphen-used-as-minus lintian warnings by creating
+    manpagesFixes.patch
+  * Add lintian overrides.
+  * debian/watch: update (Closes: #550751).
+  * Add Vcs-* fields with new packaging repository.
+  * Convert to 3.0 (quilt) source format.
+  * Bump Standards to 3.9.0.0 - Remove pre-oldstable Conflicts.
+
+  * Obviously acknowledge NMU. Thanks to Slávek Banko again!
+
+ -- Didier Raboud <didier@raboud.com>  Wed, 30 Jun 2010 10:59:21 +0200
+
+foomatic-db-engine (4.0.4-0ubuntu1) lucid; urgency=low
+
+  * New upstream release
+     - Faster generation of PPD files with foomatic-ppdfile and CUPS PPD
+       auto-generation
+     - Generate PPD files also if there is only one of printer and driver
+       XML files for the given printer/driver pair.
+     - Fixes in listing of all available PPD files for CUPS.
+     - Improvements in utilities to generate XML files from PPDs.
+     - Foomatic PPDs advertize a monochrome printer if a color printer is
+       used with a monochrome-only driver.
+     - Removed "*cupsFilter" lines for Apple, they broke printing with some
+       printers.
+     - Documentation updates and fixes (README file)
+  * foomatic-bin.README.Debian, debian/foomatic-bin.dirs: Removed obsolete
+    files.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Mon, 15 Feb 2010 17:55:40 +0100
+
+foomatic-db-engine (4.0.3-0ubuntu2) karmic; urgency=low
+
+  * debian/foomatic-db-engine.postinst: Fixed "lpstat -r" check for the
+    auto update of PPDs of existing queues. "lpstat -r" exits always with
+    status 0, we must check the actual output. Call lpstat, lpadmin, and
+    cupsctl with "-h /var/run/cups/cups.sock" to avoid querying remote
+    servers set up in /etc/cups/client.conf, and asking for passwords.
+    Thanks to Martin-Éric Racine for tracking this down and the solution!
+    See Debian bug #543468. Use signal names instead of numbers for trap.
+    Quiesces a lintian bashism warning.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Fri, 18 Sep 2009 15:21:23 +0200
+
+foomatic-db-engine (4.0.3-0ubuntu1) karmic; urgency=low
+
+  * New upstream release
+     - Updated "*PSVersion:" lines in generated PPDs
+     - Avoid duplicate insertion of driver-specific lines into the generated
+       PPDs.
+     - Generate device ID in the "*1284DeviceID:" lines in the PPDs correctly,
+       including driver info.
+     - Updates for the replacement of the "hpijs" driver entry in foomatic-db
+       by "hplip", "hpijs-pcl5e" and "hpijs-pcl5c".
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Wed, 19 Aug 2009 20:25:12 +0200
+
+foomatic-db-engine (4.0.2-0ubuntu1) karmic; urgency=low
+
+  * New upstream release.
+     - Bug fix release
+  * 10_string-password-options-and-driver-description-in-ppds-fix.patch,
+    15_foomatic-compiledb-destdir.patch,
+    20_fix-jcl-options-as-members-of-composite-options.patch,
+    25_fix-driver-in-printer-xml-without-driver-xml.patch:
+    Removed patches from upstream.
+  * debian/control: Added dependency on cups and cups-client. This is
+    needed for the automatic update of PPD files of existing print queues
+    to work.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Wed, 24 Jun 2009 14:26:25 +0200
+
+foomatic-db-engine (4.0.0-0ubuntu8) karmic; urgency=low
+
+  * debian/patches/25_fix-driver-in-printer-xml-without-driver-xml.patch:
+    If a printer XML entry has a driver in its driver list but for which
+    there is no driver XML entry, this printer/driver combo was considered
+    as producing a PPD because the driver is not in the list of drivers
+    without command line prototype. This leads for example to non-working
+    "Foomatic/Gutenprint" driver entries in the printer setup tools
+    (LP: #373371).
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Fri,  8 May 2009 12:47:49 +0200
+
+foomatic-db-engine (4.0.0-0ubuntu7) karmic; urgency=low
+
+  * debian/patches/20_fix-jcl-options-as-members-of-composite-options.patch:
+    Upstream fix in the PPD generator: In Foomatic PPDs JCL options were
+    broken when they where member options of a composite options. In addition
+    to these options not being correctly applied this made them also be
+    interpreted as a PostScript options which in turn made foomatic-rip
+    converting PDF jobs to PostScript. This made some printers suffering
+    LP: #361772 which usually is worked around by the PDF printing workflow.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu,  7 May 2009 22:00:49 +0200
+
+foomatic-db-engine (4.0.0-0ubuntu6) jaunty; urgency=low
+
+  * debian/foomatic-db-engine.postinst: Silenced non-fatal error messages when
+    post-install script updates PPDs and there are PPDs not belonging to
+    a CUPS queue in /etc/cups/ppd/ (LP: #345866).
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 26 Mar 2009 13:16:49 +0100
+
+foomatic-db-engine (4.0.0-0ubuntu5) jaunty; urgency=low
+
+  * debian/local/apport-hook.py, debian/rules: Added apport hook (LP: #338442).
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 19 Mar 2009 15:15:49 +0100
+
+foomatic-db-engine (4.0.0-0ubuntu4) jaunty; urgency=low
+
+  * debian/patches/15_foomatic-compiledb-destdir.patch: Fixed copy-and-paste
+    bug in foomatic-compiledb which broke the "-d" option (Upstream bug #319).
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 19 Feb 2009 10:15:36 +0100
+
+foomatic-db-engine (4.0.0-0ubuntu3) jaunty; urgency=low
+
+  * debian/patches/10_string-password-options-and-driver-description-in-ppds-fix.patch:
+    fixes for the generated PPD files:
+     o The "*ParamCustom..." lines in the PPDs were incorrectly generated for
+       string and password options (Upstream bug #297).
+     o The short description of the driver was inserted into the PPD files
+       in a way that if it is longer than 80 characters the resulting PPD
+       violates the PPDF specs.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Wed, 18 Feb 2009 16:52:36 +0100
+
+foomatic-db-engine (4.0.0-0ubuntu2) jaunty; urgency=low
+
+  * debian/foomatic-db-engine.postinst: Let the PPD files of the existing
+    print queues get automatically updated after each installation of this
+    package.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 15 Jan 2009 16:40:36 +0100
+
+foomatic-db-engine (4.0.0-0ubuntu1) jaunty; urgency=low
+
+  * New upstream release (4.0.0 final release, BZR rev 234)
+    o PPD listing of the PPD generator for CUPS showed some wrong PPD
+      file name (Upstream bug #281).
+    o Improved printer search. Now searches with model number but without
+      product line name also work (ex: "Ricoh MPC3500" finds the "Ricoh
+      Aficio MP C3500").
+    o All printers with <postscript> in their <lang> sections got listed
+      as supported by the "Postscript" driver. Now explicit assignment of
+      this driver is needed.
+    o Generate correct CUPS PPD extensions for numerical, string, and
+      password options.
+    o Generate JCL options in the PPD the standard way. Use Foomatic
+      keywords only if needed.
+    o Fixed segfault of foomatic-perl-data if a printer XML entry has no
+      functionality rating.
+    o Improved recognition of printer device ID items.
+    o Added new "foomatic-ppd-to-xml" tool to generate Foomatic XML files
+      corresponding to a given PPD file.
+    o Prevent busy loop shortening long PPD nicknames.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 15 Jan 2009 11:32:36 +0100
+
+foomatic-db-engine (4.0.0~bzr219-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release
+    o Use "Oki" instead of "Okidata" when normalizing manufacturer names.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Tue, 19 Aug 2008 09:48:36 +0200
+
+foomatic-db-engine (4.0.0~bzr218-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release
+    o Added "*cupsFilter" line to accept PDF as input to the generated PPD
+      files.
+    o Added support for separate driver command line for PDF input
+      ("*FoomaticRIPCommandLinePDF" keyword).
+    o Allow XML files with header lines ("<? ... ?>", "<! ... >") in the
+      beginning.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Wed, 13 Aug 2008 09:54:14 +0200
+
+foomatic-db-engine (4.0-20090509-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Use the built binaries to build the arch-indep ppds. Closes: #533452
+    Thanks to Slávek Banko for the patch!
+
+ -- Didier Raboud <didier@raboud.com>  Sun, 02 May 2010 13:01:55 +0200
+
+foomatic-db-engine (4.0-20090509-2) unstable; urgency=low
+
+  * Fix build outside of chroot.  (Closes: #532977)
+  + Use subprocess module to trap errors properly in build_ppds.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 16 Jun 2009 23:18:18 -0500
+
+foomatic-db-engine (4.0-20090509-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 09 May 2009 03:10:39 -0500
+
+foomatic-db-engine (4.0-20090301-2) unstable; urgency=low
+
+  * Now build foomatic-filters-ppds here, since upstream has discontinued
+    the package.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 11 Mar 2009 21:31:40 -0500
+
+foomatic-db-engine (4.0-20090301-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sun, 01 Mar 2009 16:23:36 -0600
+
+foomatic-db-engine (3.0.2-20080619-0ubuntu1) intrepid; urgency=low
+
+  * New upstream release
+    o Updates for new Foomatic database features
+    o Bug fixes
+  * Merge from debian unstable, remaining changes:
+    o Use openprinting.org URL in debian/watch (bug in Debian package)
+  * debian/patches/10_safer_default_margins.patch,
+    debian/patches/20_search_printer_with_empty_model.patch,
+    debian/patches/30_ppd_generator_broken_on_printer_name_with_comma.patch:
+    Removed, applied upstream.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 19 Jun 2008 11:57:37 +0200
+
+foomatic-db-engine (3.0.2-20080211-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update Homepage.  (Closes: #384022)
+  * Update debian/watch.  (Closes: #449620, #415929)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Thu, 21 Feb 2008 15:09:30 -0600
+
+foomatic-db-engine (3.0.2-20070719-0ubuntu4) gutsy; urgency=low
+
+  * debian/patches/30_ppd_generator_broken_on_printer_name_with_comma.patch:
+    PPD gnerator for CUPS did not list the PPDs correctly on printer names
+    containing a comma (LP: #150985).
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Tue,  9 Oct 2007 19:07:39 +0100
+
+foomatic-db-engine (3.0.2-20070719-0ubuntu3) gutsy; urgency=low
+
+  * debian/control: Added "cdbs" package to Build-Depends, needed for
+    simple-patchsys.mk.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Tue, 21 Aug 2007 12:07:39 +0100
+
+foomatic-db-engine (3.0.2-20070719-0ubuntu2) gutsy; urgency=low
+
+  * debian/rules: Enabled package to accept patches via simple-patchsys.mk
+  * debian/patches/10_safer_default_margins.patch: Do not use zero unprintable
+    margins if no margins are defined for printer, driver, or printer/driver
+    combo, use safer settings: 1/4th of an inch left and right, 1/2 of an
+    inch at top and bottom.
+  * debian/patches/20_search_printer_with_empty_model.patch: Allow the
+    foomatic-searchprinter utility also search for all printers of a
+    given manufacturer supplying the manufacturer name with an empty model
+    name, like "ricoh|".
+  * debian/watch: Corrected URL.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Mon, 20 Aug 2007 23:00:39 +0100
+
+foomatic-db-engine (3.0.2-20070719-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release
+     - Added support for suppressing CUPS' page accounting on a per-driver
+       basis. If a driver XML file is marked with "<nopageaccounting/>" in
+       its "<execution>" section, the line "*FoomaticNoPageAccounting: True"
+       is added to the PPD file to let foomatic-rip suppress inserting the
+       page accounting code into the PostScript data stream. This will allow
+       to turn on the page accounting of foomatic-rip by default again (bug
+       LP#126139).
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Thu, 19 Jul 2007 19:00:39 +0100
+
+foomatic-db-engine (3.0.2-20070711-0ubuntu1) gutsy; urgency=low
+
+  * New upstream release
+     - Replaced "Gimp-Print" by "Gutenprint" in scripts and documentation.
+     - Allow group names preceeded by asterisks
+       ('*') in PPD files ("*OpenGroup: ..."/"*CloseGroup: ..." lines).
+       This is needed by the PPD for the KONICA MINOLTA magicolor 5430
+       DL, provided by KONICA MINOLTA and probably also by several other
+       manufacturer-supplied PPD files.
+     - Let the PPD files listed in the XML version of the overview also
+       get listed in the Perl version.
+     - Improved find_printer() method. Now searches of make and model
+       names do not consider other characters than letters and numbers
+       any more. All other characters and boundaries between letters and
+       numbers are converted to single spaces.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Wed, 11 Jul 2007 16:59:46 +0100
+
+foomatic-db-engine (3.0.2-20070303-0ubuntu1) feisty; urgency=low
+
+  * New upstream release
+     - Bug fixes on automatic PPD generator for CUPS, especially the
+       previous version listed PPD files for printers with the PostScript
+       driver where the PPD files could not be generated (happened when
+       the printer was not in the list of supported printers in the
+       Postscript driver XML file but the printer XML file had a link to
+       a manufacturer-supplied PPD, closes: LP#81787), listed ready-made
+       PPDs provided by foomatic-db twice, and generated Foomatic generic
+       PostScript PPDs where manufacturer-supplied PPDs were available.
+
+ -- Till Kamppeter <till.kamppeter@gmail.com>  Sat,  3 Mar 2007 21:55:45 +0000
+
+foomatic-db-engine (3.0.2-20061031-1ubuntu1) feisty; urgency=low
+
+  * Merge from debian unstable; remaining Ubuntu changes:
+    - Add debian/links: Install foomatic-ppdfile as Cups driver backend, for
+      dynamic PPD file creation love.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Tue, 19 Dec 2006 17:49:19 +0100
+
+foomatic-db-engine (3.0.2-20061031-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat,  4 Nov 2006 19:22:40 -0600
+
+foomatic-db-engine (3.0.2-20060925-0ubuntu1) edgy; urgency=low
+
+  * New upstream release.
+     o Merged all Debian/Ubuntu patches upstream
+     o Let CUPS only list printer/driver combos for which really PPDs can
+       be generated (some drivers have no GhostScript command line).
+       Closes: LP#42965, LP#61934.
+
+ -- Ubuntu Till Kamppeter <till.kamppeter@gmail.com>  Mon, 25 Sep 2006 17:12:36 +0200
+
+foomatic-db-engine (3.0.2-20060712-1ubuntu1) edgy; urgency=low
+
+  * Merge from debian unstable.
+
+ -- Ubuntu Merge-o-Matic <mom@ubuntu.com>  Tue, 29 Aug 2006 14:12:36 +0100
+
+foomatic-db-engine (3.0.2-20060712-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 12 Jul 2006 20:28:01 -0400
+
+foomatic-db-engine (3.0.2-20060530-2ubuntu2) edgy; urgency=low
+
+  * Make /usr/lib/cups/driver/foomatic a symlink to
+    /usr/bin/foomatic-ppdfile for automatic PPD file generation.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Tue, 29 Aug 2006 13:08:15 +0200
+
+foomatic-db-engine (3.0.2-20060530-2ubuntu1) edgy; urgency=low
+
+  * Merge from debian unstable.
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 30 Jun 2006 08:45:59 +0200
+
+foomatic-db-engine (3.0.2-20060530-2) unstable; urgency=low
+
+  * foomatic-combo-xml.c: Work around the horribly broken way
+    foomatic-combo-xml creates strings in -O mode by allocating much more
+    memory than is actually necessary (hopefully...).  This really fixes
+    the double-free problems.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 30 May 2006 21:30:31 -0400
+
+foomatic-db-engine (3.0.2-20060530-1) unstable; urgency=high
+
+  * New upstream release.
+  * Patch to avoid double-free abort.  (Closes: #362586, #364791, #366254)
+    Thanks to Luco Bruno for the patch.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 30 May 2006 19:44:51 -0400
+
+foomatic-db-engine (3.0.2-20060318-1ubuntu1) dapper; urgency=low
+
+  * foomatic-configure.in: Change owner of copied PPD files to 'cupsys' if
+    this user exists. This fixes operation with our cups which runs as
+    non-root. Thanks a lot to Mantas Kriaučiūnas for the patch!
+    Closes: LP#31323
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Fri, 28 Apr 2006 11:13:44 +0200
+
+foomatic-db-engine (3.0.2-20060318-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix typo in foomatic-getpjloptions(8).  (Closes: #351422)
+  * gimp-print -> gutenprint.  (Closes: #326267)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 18 Mar 2006 23:02:45 -0500
+
+foomatic-db-engine (3.0.2-20060113-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Fri, 13 Jan 2006 18:15:29 -0500
+
+foomatic-db-engine (3.0.2-20050720-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 20 Jul 2005 03:14:02 -0500
+
+foomatic-db-engine (3.0.2-20050705-2) unstable; urgency=low
+
+  * Remove transition package foomatic-bin.  (Closes: #313480)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue,  5 Jul 2005 02:02:07 -0500
+
+foomatic-db-engine (3.0.2-20050705-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue,  5 Jul 2005 01:56:13 -0500
+
+foomatic-db-engine (3.0.2-20050403-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sun,  3 Apr 2005 23:00:45 -0500
+
+foomatic-db-engine (3.0.2-20041204-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat,  4 Dec 2004 12:26:22 -0600
+
+foomatic-db-engine (3.0.2-2) unstable; urgency=low
+
+  * Fix segmentation fault in foomatic-combo-xml -O.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Fri, 17 Sep 2004 23:35:18 -0500
+
+foomatic-db-engine (3.0.2-1) unstable; urgency=high
+
+  * New upstream release.
+  * Bumped to urgency high to keep synchronized with foomatic-filters.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 14 Sep 2004 20:40:35 -0500
+
+foomatic-db-engine (3.0.1-20040506-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Thu,  6 May 2004 22:55:29 -0500
+
+foomatic-db-engine (3.0.1-20040312-1) unstable; urgency=low
+
+  * New upstream release.
+    + Eliminates gratuitous Perl warning.  (Closes: #236370)
+  * Fix build if backported to woody (its Perl apparently doesn't use
+    PERL_INSTALLDIRS the same way).  (Closes: #237714)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Fri, 12 Mar 2004 20:51:06 -0600
+
+foomatic-db-engine (3.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Fri, 20 Feb 2004 22:16:09 -0600
+
+foomatic-db-engine (3.0.0-20040203-2) unstable; urgency=high
+
+  * Allow (but ignore) obsolete -t option.  (Closes: #230209)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Mon,  9 Feb 2004 10:58:30 -0600
+
+foomatic-db-engine (3.0.0-20040203-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue,  3 Feb 2004 20:24:36 -0600
+
+foomatic-db-engine (3.0.0-20040114-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 14 Jan 2004 23:07:57 -0600
+
+foomatic-db-engine (3.0.0-20031118-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 18 Nov 2003 15:18:31 -0600
+
+foomatic-db-engine (3.0.0-20030907-3) unstable; urgency=low
+
+  * Fix build with pbuilder.  (Closes: #215071)
+  * Supply debian/rules CFLAGS to configure script.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 14 Oct 2003 07:16:57 -0500
+
+foomatic-db-engine (3.0.0-20030907-2) unstable; urgency=low
+
+  * Ensure either wget or curl is installed to avoid ugly error messages
+    that confuse certain frontends.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Mon, 22 Sep 2003 19:56:57 -0500
+
+foomatic-db-engine (3.0.0-20030907-1) unstable; urgency=low
+
+  * New upstream release.
+  * Look for netcat (nc) in /bin instead of /usr/bin.  (Closes: #208180)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sun,  7 Sep 2003 12:11:22 -0500
+
+foomatic-db-engine (3.0.0-20030628-4) unstable; urgency=low
+
+  * Force deprecated debian/* files from upstream to be removed even if
+    debian/rules clean hasn't been run.  (Closes: #202508)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat,  9 Aug 2003 23:03:02 -0500
+
+foomatic-db-engine (3.0.0-20030628-3) unstable; urgency=medium
+
+  * Initialize newid and oldid in foomatic-combo-xml.c; this should fix a
+    segfault only observed on alpha(?).  (See #200555)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed,  9 Jul 2003 18:07:26 -0500
+
+foomatic-db-engine (3.0.0-20030628-2) unstable; urgency=low
+
+  * Update README.Debian, since foomatic-filters-ppds is now available.
+  * Fix a bug in foomatic-configure that made it behave oddly when trying
+    to update a queue that was defined by a non-Foomatic PPD file.  (This
+    solves some serious issues in foomatic-gui and will be sent upstream.)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue,  1 Jul 2003 19:19:04 -0500
+
+foomatic-db-engine (3.0.0-20030628-1) unstable; urgency=low
+
+  * New upstream release.
+  * Generated PPD files are now compatible with Windows PostScript
+    drivers.  You will need to regenerate any needed PPD files with
+    foomatic-configure or the foomatic-gui frontend.  (Closes: #192308)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 28 Jun 2003 16:54:15 -0500
+
+foomatic-db-engine (3.0.0-6) unstable; urgency=low
+
+  * Fix bashisms in configure and debian/rules.  (Closes: #199180)
+  * Remove versioning from perl build dependency.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 28 Jun 2003 16:48:32 -0500
+
+foomatic-db-engine (3.0.0-5) unstable; urgency=low
+
+  * Include a brief README.Debian in the foomatic-bin transition package.
+    (Closes: #195866)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 10 Jun 2003 17:50:45 -0500
+
+foomatic-db-engine (3.0.0-4) unstable; urgency=low
+
+  * Improve man page for foomatic-printjob.
+  * Implement foomatic-printjob -h -P <queue>.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 27 May 2003 15:48:58 -0500
+
+foomatic-db-engine (3.0.0-3) unstable; urgency=low
+
+  * Add note to README.Debian about the necessity of reloading the CUPS
+    daemon after a new PPD has been installed.
+  * Add a presubj file for bug/reportbug.
+  * Update TODO.Debian.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 10 May 2003 10:06:20 -0500
+
+foomatic-db-engine (3.0.0-2) unstable; urgency=low
+
+  * Add note to README.Debian about foomatic-filters-ppds.
+  * Suggest foomatic-gui in foomatic-db-engine.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Fri,  9 May 2003 14:19:19 -0500
+
+foomatic-db-engine (3.0.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat,  3 May 2003 23:11:34 -0500
+
+foomatic-db-engine (2.9-20030423-4) unstable; urgency=medium
+
+  * Build foomatic-bin in the binary-indep target.  (Closes: #191511)
+  * foomatic-bin is a dependency package for backwards-compatibility;
+    hence, there are not supposed to be any binaries in it.  (Closes: #191520)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat,  3 May 2003 22:55:45 -0500
+
+foomatic-db-engine (2.9-20030423-3) unstable; urgency=low
+
+  * Downgrade foomatic-db-hpijs to a suggestion.
+  * Add foomatic-db-gimp-print as a suggestion.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Thu, 24 Apr 2003 14:36:35 -0500
+
+foomatic-db-engine (2.9-20030423-2) unstable; urgency=low
+
+  * Silently ignore an empty printers.conf file in foomatic-configure.
+    (Closes: #187580)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 23 Apr 2003 20:03:14 -0500
+
+foomatic-db-engine (2.9-20030423-1) unstable; urgency=high
+
+  * New upstream release.  (Same as 3.0.0rc2)
+  * Package description improved.  (Closes: #189497)
+  * From the upstream changelog:
+    - Security bug in string and password options fixed: In Foomatic
+      3.0.0rc1 the user could use arbitrary characters in a string option,
+      so there was for example possible that for an option supposed to be
+      inserted into the filter command line a user could enter a string
+      like "|| rm -rf * ||".
+
+      This is now blocked by the possibility to specify in the Foomatic
+      data which characters are allowed and/or a regular expression, which
+      has to be matched by the string, in the Foomatic data for a string or
+      password option. See the section "String and Password Options" in the
+      README file of the "foomatic-db-engine" package for more details.
+
+    (This only affects the 2.9 series of foomatic.  woody is unaffected.)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 23 Apr 2003 19:34:10 -0500
+
+foomatic-db-engine (2.9-3.0.0rc1-1) unstable; urgency=low
+
+  * New upstream release of release candidate for Foomatic 3.0.0.
+  * Did I mention foomatic-gui? http://blog.lordsutch.com/?topic=13
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sun, 13 Apr 2003 22:11:25 -0500
+
+foomatic (2.0.2-20021202-1) unstable; urgency=low
+
+  * New upstream release.
+    + Allow embedding of fonts in PostScript driver without changing the
+      PostScript level.
+    + DeskJet 3325 support.
+    + Improvements to file handling in foomatic-gswrapper.
+  * Did I mention foomatic-gui? http://blog.lordsutch.com/?topic=13
+
+ -- Chris Lawrence <lawrencc@debian.org>  Mon,  2 Dec 2002 16:48:50 -0600
+
+foomatic (2.0.2-20021127-1) unstable; urgency=low
+
+  * New upstream release.
+    + GIMP-Print 4.2.4 support.
+    + Addtional HP printers supported.
+  * My GUI frontend is at http://blog.lordsutch.com/?topic=13
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 26 Nov 2002 23:30:24 -0600
+
+foomatic (2.0.2-20021124-3) unstable; urgency=low
+
+  * Don't remap CUPS' autodetection URIs into file: URIs, since that makes
+    them no longer valid.  (e.g. usb://HP/Photosmart%20P1100?serial=blah)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Tue, 26 Nov 2002 14:52:14 -0600
+
+foomatic (2.0.2-20021124-2) unstable; urgency=low
+
+  * Fix buglet introduced in 2.0.2-20021117-2 that stopped
+    foomatic-configure -Q -s cups from working as root.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Mon, 25 Nov 2002 23:29:50 -0600
+
+foomatic (2.0.2-20021124-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Chris Lawrence <quango@watervalley.net>  Sun, 24 Nov 2002 17:57:47 -0600
+
+foomatic (2.0.2-20021120-1) unstable; urgency=low
+
+  * New upstream CVS snapshot release.
+    + Add margins when printing plain text.
+    + Fix option parsing bug.  (Closes: #169767)
+      (This may also fix #169509 and #169623, but I'm not sure.)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 20 Nov 2002 00:26:18 -0600
+
+foomatic (2.0.2-20021117-3) unstable; urgency=low
+
+  * Use grep instead of strings to figure out if lpr is the GNU one or
+    not.  (Closes: #169637)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Mon, 18 Nov 2002 13:08:56 -0600
+
+foomatic (2.0.2-20021117-2) unstable; urgency=low
+
+  * Fix foomatic-configure when no printers are defined.  (Closes: #166555)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Mon, 18 Nov 2002 09:41:54 -0600
+
+foomatic (2.0.2-20021117-1) unstable; urgency=low
+
+  * New upstream release.
+    + Fixed custom paper size support code.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sun, 17 Nov 2002 04:34:21 -0600
+
+foomatic (2.0.2-20021114-1) unstable; urgency=low
+
+  * New upstream release.
+  * Dropped dependencies on various perl libraries, as
+    foomatic-perl-data.c implements what is needed by foomatic.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Thu, 14 Nov 2002 04:08:32 -0600
+
+foomatic (2.0.2-20021031-2) unstable; urgency=low
+
+  * Backed out -sDEVICE=ljet4, since Till says it's not needed.
+    Hopefully #145032 will stay fixed regardless.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Thu, 31 Oct 2002 17:34:03 -0600
+
+foomatic (2.0.2-20021031-1) unstable; urgency=medium
+
+  * New upstream snapshot release.  Notable changes:
+    + Variable page size support fix for generated PPD files.
+    + KDE Printing Manager now generates PPD-O-Matic PPDs.
+  * Remove duplicated text in the foomatic-perl-data man page.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Thu, 31 Oct 2002 17:06:30 -0600
+
+foomatic (2.0.2-20021026-1) unstable; urgency=medium
+
+  * New maintainer.
+  * Since it's now maintained, close all NMU-fixed bugs with this upload.
+  * New upstream CVS snapshot based on 2.0.2:
+    + Use -dPARANOIDSAFER instead of -dSAFER.
+      (There are some mild security issues associated with -dSAFER.  For
+       details see http://www.linuxprinting.org/.)
+    + Now supports hpijs-rss (included in Debian hpijs 1.2.2 and later).
+      Use the hpijs-rss driver instead of hpijs for the extra features to be
+      enabled.
+    + GIMP-Print 4.2.3 support.
+    + Numerous driver updates; see the upstream changelog or
+      http://www.linuxprinting.org/ for details.
+  * Improved package descriptions.  I still don't think they're ideal for
+    a "newbie," but they're a bit better.
+  * Depend on foomatic-db | foomatic-db-gimp-print | foomatic-data, as the
+    package is downright useless without a database.
+  * Someone should code a cool frontend... :-)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 26 Oct 2002 16:20:03 -0500
+
+foomatic (2.0-20020911-0.4) unstable; urgency=low
+
+  * Depend on the current perl or libstorable-perl.  (Closes: #161066)
+
+ -- Chris Lawrence <lawrencc@debian.org>  Mon, 16 Sep 2002 14:14:41 -0500
+
+foomatic (2.0-20020911-0.3) unstable; urgency=low
+
+  * NMU #3.
+  * Oops, forgot to regenerate configure.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 14 Sep 2002 13:19:04 -0500
+
+foomatic (2.0-20020911-0.2) unstable; urgency=low
+
+  * Add #include <string.h> to aclocal.m4 tests for libxml and libxml2.
+    Should fix build failures on ia64.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Sat, 14 Sep 2002 12:54:49 -0500
+
+foomatic (2.0-20020911-0.1) unstable; urgency=low
+
+  * NMU.
+  * New upstream bugfix release.  (Closes: #158917)
+  * Remove libstorable-perl dependencies.  (Closes: #159191, #159192)
+  * Update build dependency, since libstorable-perl isn't in perl 5.6.1.
+  * Add EPSON LQ 570+ to st800 driver list.  (Closes: #143544)
+  * Add -sDEVICE=ljet4 to the ljet4 driver entry.  (Closes: #145032)
+  * Suppress warnings when the backup file isn't present.  (Closes: #146937)
+  * Fix location of PDQ printrc file.  (Closes: #150125)
+  * Ensure we build with rlpr, netcat, and wget/curl support.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Wed, 11 Sep 2002 17:55:40 -0500
+
+foomatic (2.0-20020829-0.1) unstable; urgency=low
+
+  * NMU.
+  * New upstream release.
+  * No longer ship gimp-print drivers in foomatic-db; they can be found in
+    foomatic-db-gimp-print.
+  * Recommend hpijs.
+
+ -- Chris Lawrence <lawrencc@debian.org>  Thu, 29 Aug 2002 19:25:58 -0500
+
+foomatic (0.20020408-4) unstable; urgency=high
+
+  * Changed debian/rules to use libxml2.
+  * Changed an instruction in debian/foomatic-bin.config so that it works with
+    the bash version 2.03 from potato, closes: 142227.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Wed, 24 Apr 2002 20:48:53 +0200
+
+foomatic (0.20020408-3) unstable; urgency=high
+
+  * Added manpages for foomatic-fix-xml and foomatic-perl-data.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Mon, 22 Apr 2002 15:26:30 +0200
+
+foomatic (0.20020408-2) unstable; urgency=high
+
+  * Added gimp-print-db as foomatic-db-gimpprint isn't available.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Sun, 14 Apr 2002 15:32:23 +0200
+
+foomatic (0.20020408-1) unstable; urgency=high
+
+  * New upstream version, closes: 140165, 142799, 144268.
+  * Include the old stp driver again, as libgimpprint4.3.0 didn't make it into
+    woody the package lacked gimp-print and stp, which made it rather useless.
+  * Corrected section number of foomatic-compiledb and foomatic-datafile
+    manpages.
+  * Added README.Debian.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Mon,  8 Apr 2002 22:52:54 +0200
+
+foomatic (0.20020213-8) unstable; urgency=low
+
+  * The previous version was accidentally built as a native Package.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Sat,  9 Mar 2002 04:55:44 +0100
+
+foomatic (0.20020213-7) unstable; urgency=low
+
+  * Added missing documantation: README TODO USAGE. Closes: #136469
+  * Remove error message from postinst.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Mon,  4 Mar 2002 02:02:21 +0100
+
+foomatic (0.20020213-6) unstable; urgency=low
+
+  * Changed the default for preserve_manual_changes to parse.
+  * Fixed a bug in the parser routine.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Wed, 20 Feb 2002 03:28:52 +0100
+
+foomatic (0.20020213-5) unstable; urgency=low
+
+  * Added different ways to handle local changes.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Tue, 19 Feb 2002 15:31:11 +0100
+
+foomatic (0.20020213-4) unstable; urgency=low
+
+  * Updated descriptions in foomatic-bin.{templates,postinst}.
+  * Changed priorities in foomatic-bin.config according to policy.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Sun, 17 Feb 2002 18:47:53 +0100
+
+foomatic (0.20020213-3) unstable; urgency=low
+
+  * Changed default for ps_accounting to off (see bug #131786 and #133613)
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Fri, 15 Feb 2002 00:39:54 +0100
+foomatic (0.20020213-2) unstable; urgency=low
+
+  * Fixed unsetting of ps_accounting in generated filter.conf. Closes: #131786
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Thu, 14 Feb 2002 19:18:54 +0100
+
+foomatic (0.20020213-1) unstable; urgency=low
+
+  * Added Debconf interface to generate /etc/foomatic/filter.conf
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Wed, 13 Feb 2002 07:03:56 +0100
+
+foomatic (0.20020131-1) unstable; urgency=low
+
+  * Cleanup printer/driver database in install-indep target.
+  * Set LPRNG_CONF in debian/rules.
+  * Updated dependencies for cupsomatic-pppd. Closes: #129944, #128697
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Thu, 31 Jan 2002 20:56:39 +0100
+
+foomatic (0.20020120-1) unstable; urgency=low
+
+  * Filter scripts support an optional config file /etc/foomatic/filter.conf.
+  * Added dependencies on mpage|a2ps|enscript, replaces old cupsomatic-pppd.
+  * Corrected section of lpdomatic manpage which was moved back to
+    /usr/sbin.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Mon, 21 Jan 2002 02:03:05 +0100
+
+foomatic (0.20020105-1) unstable; urgency=low
+
+  * Conflicts with cupsomatic-pppd.
+  * Added workaround for printcaps created/edited by lprngtool to the
+    foomatic-configure script.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Sun,  6 Jan 2002 03:38:20 +0100
+
+foomatic (0.20011231-1) unstable; urgency=low
+
+  * Removed bashism from debian/rules.
+  * Applied Jeff's Patches to debian/rules and did some cleanup.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Tue,  1 Jan 2002 04:55:27 +0100
+
+foomatic (0.20011223-1) unstable; urgency=low
+
+  * Corrected lpdomatic entry in debian/foomatic-bin.manpages.
+  * Edited lpdomatic and foomatic-gswrapper manpages.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Sun, 23 Dec 2001 22:30:33 +0100
+
+foomatic (0.20011210-1) unstable; urgency=low
+
+  * Made proper install and build targets in debian/rules and did some
+    cleanup there.
+  * Added manpage for directomatic.
+  * Included the following patches contributed by Jeff Licquia:
+  * Added proper Build-Depends.
+  * Updated Standards-Version.
+  * Fixed the descriptions to be formatted properly.
+  * Fixed the Perl libraries to be installed to the proper location.
+  * That Recommendation should be "cupsys", not "cups".
+  * Added pdq to the list of print spoolers in Recommends.
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Tue, 11 Dec 2001 05:57:13 +0100
+
+foomatic (0.20011206-1) unstable; urgency=low
+
+  * Initial Release
+
+ -- Manfred Wassmann <manolo@NCC-1701.B.Shuttle.de>  Tue, 20 Mar 2001 23:55:22 +0100

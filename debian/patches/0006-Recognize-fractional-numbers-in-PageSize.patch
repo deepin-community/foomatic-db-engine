@@ -1,0 +1,37 @@
+From: Andreas Gruenbacher <agruenba@redhat.com>
+Date: Thu, 30 Jan 2020 23:08:23 +0100
+Subject: Recognize fractional numbers in PageSize
+
+Right now, fractional numbers (fractional pt sizes) aren't allowed in
+PageSize values even though they are perfectly fine in PPD files.  In
+contrast, the values foomatic puts into the *ImageableArea and
+*PaperDimension definitions it generates are fractional.  So allow
+fractional numbers in PageSize values as well.
+---
+ lib/Foomatic/DB.pm | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/lib/Foomatic/DB.pm b/lib/Foomatic/DB.pm
+index 96eeb48..e893c0f 100644
+--- a/lib/Foomatic/DB.pm
++++ b/lib/Foomatic/DB.pm
+@@ -4032,7 +4032,7 @@ sub getppd (  $ $ $ ) {
+ 			# option.
+ 			my $size = $v->{'driverval'};
+ 			if ($size =~ /([\d\.]+)x([\d\.]+)([a-z]+)\b/) {
+-			    # 2 positive integers separated by 
++			    # 2 positive numbers separated by
+ 			    # an 'x' with a unit
+ 			    my $w = $1;
+ 			    my $h = $2;
+@@ -4050,8 +4050,8 @@ sub getppd (  $ $ $ ) {
+ 			    $w = sprintf("%.2f", $w) if $w =~ /\./;
+ 			    $h = sprintf("%.2f", $h) if $h =~ /\./;
+ 			    $size = "$w $h";
+-			} elsif (($size =~ /(\d+)[x\s]+(\d+)/) ||
+-			    # 2 positive integers separated by 
++			} elsif (($size =~ /([\d\.]+)[x\s]+([\d\.]+)/) ||
++			    # 2 positive numbers separated by
+ 			    # whitespace or an 'x'
+ 				 ($size =~ /\-dDEVICEWIDTHPOINTS\=(\d+)\s+\-dDEVICEHEIGHTPOINTS\=(\d+)/)) {
+ 			    # "-dDEVICEWIDTHPOINTS=..."/"-dDEVICEHEIGHTPOINTS=..."

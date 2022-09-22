@@ -1,0 +1,49 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Sat, 1 Dec 2018 20:01:36 +0100
+Subject: Fix ou{,t}put and program{,m}atic typos in manpages and scripts
+
+---
+ foomatic-configure.1.in | 2 +-
+ foomatic-configure.in   | 2 +-
+ foomatic-ppdfile.1.in   | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/foomatic-configure.1.in b/foomatic-configure.1.in
+index 5671838..f51d87d 100644
+--- a/foomatic-configure.1.in
++++ b/foomatic-configure.1.in
+@@ -45,7 +45,7 @@ printer) always \fBfoomatic-rip(1)\fR will be used, except for PPD
+ files of PostScript printers under CUPS or PPR, they will be used
+ without RIP filter.
+ 
+-It also comprises half of a programatic API for user tools: you can
++It also comprises half of a programmatic API for user tools: you can
+ learn and control everything about the static properties of print
+ queues here. With the sister program \fBfoomatic-printjob(1)\fR, you
+ can do everything related to the print queue's dynamic state: submit
+diff --git a/foomatic-configure.in b/foomatic-configure.in
+index 3790be7..fcdf4e9 100644
+--- a/foomatic-configure.in
++++ b/foomatic-configure.in
+@@ -5,7 +5,7 @@ use strict; # -*- perl -*-
+ # print queues, drivers, spoolers, etc using the foomatic database and
+ # companion filters.
+ 
+-# It also comprises half of a programatic API for user tools: you can
++# It also comprises half of a programmatic API for user tools: you can
+ # learn and control everything about the static properties of print
+ # queues here. With the sister program foomatic-printjob, you can do
+ # everything related to print queue dynamic state: submit jobs, and
+diff --git a/foomatic-ppdfile.1.in b/foomatic-ppdfile.1.in
+index c504f8a..82225da 100644
+--- a/foomatic-ppdfile.1.in
++++ b/foomatic-ppdfile.1.in
+@@ -17,7 +17,7 @@ to compute the spooler-independent Foomatic PPD file for any valid
+ printer/driver combo available in the Foomatic database, both for
+ printing with \fBfoomatic-rip(1)\fR and for applications/clients being
+ able to access the printer's options.  The PPD file is returned on
+-standard ouput.
++standard output.
+ If the driver is not specified, the default driver is used.
+ 
+ .PP

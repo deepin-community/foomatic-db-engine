@@ -1,0 +1,37 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Sat, 10 Feb 2018 14:48:03 +0100
+Subject: Wrap long lines to avoid man warnings
+
+---
+ foomatic-configure.1.in | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/foomatic-configure.1.in b/foomatic-configure.1.in
+index 6584ec2..5671838 100644
+--- a/foomatic-configure.1.in
++++ b/foomatic-configure.1.in
+@@ -8,7 +8,12 @@ printing system.
+ .B foomatic-configure
+ [\fIOPTION\fR]...
+ 
+-.BI foomatic-configure\ \-n \ queuename \ [\ \-N \ description \ ] \ [\ \-L \ location \ ] \ [\ \-c \ connect \ ] \ [\ \-d \ driver \ ] \ [\ \-p \ printer \ ] \ [\ \--ppd \ ppdfile \ ] \ [\ \-s \ spooler \ ] \ \fB[\ \fB\-C \ \fB[\ \fIsourcespooler\fB\ \fB]\ \fIsourcequeue\fB \ \fB] \ \fB[\ \fB\-o \ \fIoption1\fB=\fIvalue1\fB \ \fB\-o \ \fIoption2\fB \ \fB...\ \fB]\ \fB[\ \fB\-q\ \fB]\
++.BI foomatic-configure\ \-n \ queuename \ [\ \-N \ description \ ]
++[\ \-L \ location \ ] \ [\ \-c \ connect \ ] \ [\ \-d \ driver \ ]
++[\ \-p \ printer \ ] \ [\ \--ppd \ ppdfile \ ] \ [\ \-s \ spooler \ ]
++\fB[\ \fB\-C \ \fB[\ \fIsourcespooler\fB\ \fB]\ \fIsourcequeue\fB \ \fB]
++\fB[\ \fB\-o \ \fIoption1\fB=\fIvalue1\fB \ \fB\-o \ \fIoption2\fB
++\fB...\ \fB]\ \fB[\ \fB\-q\ \fB]\
+ 
+ .BI foomatic-configure\ \-D\ \-n \ queuename \ [\ \-s \ spooler \ ]\ [\ \-q\ ]
+ 
+@@ -16,7 +21,9 @@ printing system.
+ 
+ .BI foomatic-configure\ \-Q\ \ [\ \-s \ spooler \ ]\ [\ \-n \ queuename \ ]\ [\ \-r\ ]
+ 
+-.BI foomatic-configure\ \-P\ \ [\ \-s \ spooler \ ]\ [\ \-n \ queuename \ ] \ \fB[\ \fB\-d \ \fIdriver \ \fB] \ \fB[\ \fB\-p \ \fIprinter \ \fB] \ \fB[\ \fB\--ppd \ \fIppdfile \ \fB] \ \fB[\ \fIindex \ \fB]
++.BI foomatic-configure\ \-P\ \ [\ \-s \ spooler \ ]\ [\ \-n \ queuename \ ]
++\fB[\ \fB\-d \ \fIdriver \ \fB] \ \fB[\ \fB\-p \ \fIprinter \ \fB]
++\fB[\ \fB\--ppd \ \fIppdfile \ \fB] \ \fB[\ \fIindex \ \fB]
+ 
+ .BI foomatic-configure\ \-X\ \-p \ printer \ |\ \-d \ driver \ |
+ .BI \-p \ printer \ \-d \ driver

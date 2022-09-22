@@ -1,0 +1,2 @@
+/usr/bin/foomatic-ppdfile /usr/lib/cups/driver/foomatic
+/usr/share/man/man1/foomatic-ppdfile.1.gz /usr/share/man/man1/foomatic-datafile.1.gz

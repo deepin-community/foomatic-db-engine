@@ -1,0 +1,40 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Fri, 17 Jan 2020 15:41:41 +0100
+Subject: Use pkg-config instead of xml2-config
+
+Closes: #949145
+---
+ configure.ac | 19 +++++--------------
+ 1 file changed, 5 insertions(+), 14 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index e4e9820..e0fbb10 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -22,21 +22,12 @@ dnl LIBS="$LIBS"
+ #
+ # Test for libxml
+ #
+-xml_version=
+-AC_PATH_PROG(XML2_CONFIG, xml2-config)
+-if test ! -z "$XML2_CONFIG"; then
+-        xml_version=libxml2
+-        XML_CFLAGS=`$XML2_CONFIG --cflags`
+-        XML_LIBS=`$XML2_CONFIG --libs`
+-fi
+-if test -z "$xml_version"; then
+-        AC_PATH_PROG(XML_CONFIG, xml-config)
+-        if test ! -z "$XML_CONFIG"; then
+-                xml_version=libxml
+-                XML_CFLAGS=`$XML_CONFIG --cflags`
+-                XML_LIBS=`$XML_CONFIG --libs`
+-        fi
++AC_PATH_PROG(PKG_CONFIG, pkg-config)
++if test -z "$PKG_CONFIG" ; then
++  AC_MSG_ERROR("pkg-config is mandatory");
+ fi
++XML_CFLAGS=`$PKG_CONFIG --cflags libxml-2.0`
++XML_LIBS=`$PKG_CONFIG --libs libxml-2.0`
+ AC_SUBST(XML_CFLAGS)
+ AC_SUBST(XML_LIBS)
+ 

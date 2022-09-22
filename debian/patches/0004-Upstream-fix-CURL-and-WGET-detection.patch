@@ -1,0 +1,29 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Mon, 3 Dec 2018 13:52:24 +0100
+Subject: Upstream: fix CURL and WGET detection
+
+---
+ configure.ac | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index efcaf5e..e4e9820 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -116,12 +116,12 @@ fi
+ AC_PATH_PROG(CAT,cat,CAT_NOT_FOUND,$BSB)
+ AC_PATH_PROG(GS,gs,GHOSTSCRIPT_NOT_FOUND,$BSB)
+ AC_PATH_PROG(A2PS,a2ps,A2PS_NOT_FOUND,$BSB)
+-AC_PATH_PROG(WGET,wget,$BSB)
+-AC_PATH_PROG(CURL,curl,$BSB)
+-if test -z "$CURL" -a -z "$CURL" ; then
++AC_PATH_PROG(WGET,wget,WGET_NOT_FOUND,$BSB)
++AC_PATH_PROG(CURL,curl,CURL_NOT_FOUND,$BSB)
++if test -z "$CURL" -a -z "$WGET" ; then
+ 	AC_MSG_ERROR("cannot find wget and curl.  You need to install at least one");
+ fi
+-AC_PATH_PROG(PRINTF,printf,$BSB)dnl
++AC_PATH_PROG(PRINTF,printf,PRINTF_NOT_FOUND,$BSB)dnl
+ 
+ # disable ghostscript check
+ AC_MSG_CHECKING(Ghostscript check)

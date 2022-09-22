@@ -1,0 +1,22 @@
+From: Didier Raboud <odyx@debian.org>
+Date: Sat, 10 Feb 2018 14:48:02 +0100
+Subject: Fix netcat's path; in Debian it lives in /bin
+
+Bug-Debian: http://bugs.debian.org/676378
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index af4ef7f..efcaf5e 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -281,7 +281,7 @@ dnl DIRECT_ETC=/etc/foomatic/direct
+ dnl DIRECT_CONFIG=$(DIRECT_ETC)/.config
+ 
+ # Other paths
+-AC_PATH_PROGS(NC,nc netcat,/usr/bin/nc,$BSB)
++AC_PATH_PROGS(NC,nc netcat,/bin/nc,$BSB)
+ AC_PATH_PROGS(RLPR,rlpr,/usr/bin/rlpr,$BSB)
+ AC_PATH_PROGS(SMBCLIENT,smbclient,/usr/bin/smbclient,$BSB)
+ AC_PATH_PROGS(NPRINT,nprint,/usr/bin/nprint,$BSB)

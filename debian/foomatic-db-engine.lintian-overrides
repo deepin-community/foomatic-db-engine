@@ -1,0 +1,9 @@
+# We lack several manpages
+no-manual-page usr/sbin/foomatic-cleanupdrivers
+no-manual-page usr/sbin/foomatic-extract-text
+no-manual-page usr/sbin/foomatic-fix-xml
+no-manual-page usr/sbin/foomatic-nonumericalids
+no-manual-page usr/bin/foomatic-ppd-to-xml
+no-manual-page usr/sbin/foomatic-printermap-to-gutenprint-xml
+no-manual-page usr/sbin/foomatic-replaceoldprinterids
+no-manual-page usr/bin/foomatic-searchprinter
